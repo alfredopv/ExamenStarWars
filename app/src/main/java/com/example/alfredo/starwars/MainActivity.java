@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
         jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=7&format=json"),adapter);
         jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=8&format=json"),adapter);
         jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=9&format=json"),adapter);
-        
+
 
     }
 
