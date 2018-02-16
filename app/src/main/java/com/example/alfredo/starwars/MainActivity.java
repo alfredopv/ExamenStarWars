@@ -35,7 +35,16 @@ public class MainActivity extends Activity {
         listView.setAdapter(adapter);
         mQueue = VolleySingleton.getInstance(this).getRequestQueue();
 
-        jsonStarWars(getStarWarsString(),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=1&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=2&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=3&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=4&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=5&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=6&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=7&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=8&format=json"),adapter);
+        jsonStarWars(getStarWarsString("https://swapi.co/api/people/?page=9&format=json"),adapter);
+        
 
     }
 
@@ -75,12 +84,11 @@ public class MainActivity extends Activity {
         mQueue.add(request);
     }
 
-    private String getStarWarsString(){
-        final String CHARACTER_BASE_URL =
-                "https://swapi.co/api/people/?page=1&format=json";
+    private String getStarWarsString(String url){
+        //final String CHARACTER_BASE_URL ="https://swapi.co/api/people/?page=1&format=json";
 
         Uri builtUri;
-        builtUri = Uri.parse(CHARACTER_BASE_URL).buildUpon().build();
+        builtUri = Uri.parse(url).buildUpon().build();
 
         return builtUri.toString();
     }
